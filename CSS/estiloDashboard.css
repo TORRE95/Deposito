@@ -1,0 +1,170 @@
+:root{
+
+	--header: #7C0A02;
+	--titulo: white;
+	--texto: white;
+}
+
+*{
+	font-family: 'Montserrat', sans-serif;
+	margin: 0px;
+	padding: 0px;
+}
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: white;
+}
+
+.header{
+
+	width: 100%;
+	position: absolute;
+	height: 10%;
+	background-color: var(--header);
+	box-shadow: 5px;
+	float: left;
+	overflow: contain;
+	-webkit-box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.6);
+	-moz-box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.6);
+	box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.6);
+}
+
+.logo{
+	position: absolute;
+	float: left;
+	left: 10px;
+}
+
+.titulo{
+	position: absolute;
+	left: 40%;
+	
+}
+
+.panel{
+
+	background-color: rgb(49, 50, 51);
+	width: 20%;
+	height: 100%;
+	position: absolute;
+}
+
+.item{
+	width: calc(100% - 10px;);
+	height: 50px;
+	padding: 10px;
+	line-height: 45px
+
+}
+.item:hover{
+	background-color: rgb(78, 78, 78);
+}
+
+.contenedor{
+
+	position: absolute;
+	width: 100%;
+	height: 90%;
+	top: 10%;
+}
+.contenido{
+	position: absolute;
+	width: 80%;
+	left: 20%;
+	height: 100%;
+	background-color: rgb(242, 242, 242);
+	overflow-y: scroll;
+}
+.estadisticas{
+
+	position: relative;
+	background-color: white;
+	width: 98%;
+	height: 20%;
+	margin: 1%;
+	border-radius: 7px;
+	box-shadow:5px 5px 20px grey;  
+	text-align: center;
+}
+
+.modulos{
+	position: relative;
+	background-color: white;
+	width: 98%;
+	height: 15%;
+	margin: 1%;
+	border-radius: 7px;
+	box-shadow:5px 5px 20px grey;  
+	text-align: center;
+	line-height: 180px;
+	transition: 1s ease;
+}
+span {
+	position: relative;
+  	display: inline-block;
+  	vertical-align: middle;
+  	line-height: normal;
+  	top: 40%;
+}
+.modulosP{
+	position: relative;
+	background-color: white;
+	width: 98%;
+	height: 50%;
+	margin: 1%;
+	border-radius: 7px;
+	box-shadow:5px 5px 20px grey;  
+	text-align: center;
+	line-height: 180px;
+}
+
+.orden{
+	position: relative;
+	width: 20%;
+	height: 100%;
+	float: left;
+}
+.numero{
+	position: relative;
+	width: 100%;
+	height: 50%;
+	line-height: 100%;
+}
+.hora{
+	position: relative;
+	width: 100%;
+	height: 50%;
+	line-height: 100%;
+}
+.articulos{
+	position: relative;
+	width: 60%;
+	height: 100%;
+	float: left;
+	line-height: 100%;
+
+}
+.articulos>ul{
+	list-style: none;
+	position: relative;
+	top: 20%;
+	font-weight: bolder;
+	font-size: 14;
+}
+.total{
+	position: relative;
+	float: left;
+	width: 20%;
+	height: 100%;
+	line-height: 100%;
+}
+label{
+	position: relative;
+	top: 40%;
+	font-weight: bolder;
+	font-size: 14;
+}
+
+.modulos:hover{
+  
+}

@@ -1,0 +1,181 @@
+:root{
+
+    --header: linear-gradient(265deg,#0065ab,#00406c);
+    --titulo: white;
+    --texto: white;
+}
+*{
+	font-family: 'Montserrat', sans-serif;
+	margin: 0px;
+	padding: 0px;
+
+}
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: white;
+}
+body{
+    background-image: url(../img/madera.jpg);
+    background-size: 240%;
+    background-attachment: fixed;
+}
+.header{
+
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 10%;
+    background: var(--header);
+    color: white;
+}
+.contenido{
+    margin-left: 10px;
+    margin-top: 18%;
+    margin-bottom:20%;
+    position: relative; 
+    height: 100%;
+}
+.notch{
+    position: fixed;
+    width: 50%;
+    height: 5%;
+    background: var(--header);
+    left: 25%;
+    top: 0px;
+    z-index: 10;
+    margin-bottom: 70px;
+    border-radius: 0px 0px 10px 10px;
+    -webkit-box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.6);
+    box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.6);
+}
+.titulo{
+    width: 100%;
+    position: relative;
+    height: 40%;
+    top: 0px;
+    text-align: center;
+    color: var(--texto);
+}
+.titulo > i{
+    float: left;
+    position: relative;
+    width: 10%;
+    margin-left: 10px;
+}
+.titulo > h2{
+    float: left;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    
+}
+.navbar {
+    width: 100%;
+    position: relative;
+    height: 50%;
+}
+.navbar ul {
+    list-style-type: none; /*to remove bullets*/
+    text-align: center;
+    position: relative;
+    top: 10px;
+    margin-left: 10px;
+}
+.navbar li{
+    float: left;
+    padding: 2px;
+    width: 110px;
+}
+
+.item{
+    position: relative;
+    background-color: rgba(255,255,255,0.7);
+    width: 45%;
+    height: 30%;
+    margin-left: 1%;
+    text-align: center;
+    margin-bottom: 10px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.fotoItem{
+    position: relative;
+    width: 100%;
+    height: 60%;
+    color: black;
+    text-align: center;
+    
+}
+
+.fotoItem > img{
+    top: 10%;
+    position: relative;
+    border-radius: 10px;
+    max-width: 95%;
+    max-height: 95%;
+}
+.desc{
+    position: relative;
+    width: 100%;
+    height: 30%;
+    color: black;
+    font-size: 10px;
+    text-align: center;
+}
+.desc > h3{
+    position: relative;
+    text-align: left;
+    margin-left: 10px;
+    text-align: center;
+}
+.precio{
+    position: relative;
+    width: 100%;
+    height: 10%;
+    color: rgb(221, 166, 0);
+}
+.dinero{
+    position: relative;
+    text-align: center;
+    width: 100%;
+    color: green;
+}
+.agregar{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.agregar > button{
+    position: relative;
+    background-color: #00406c; /* Green */
+    border: none;
+    color: white;
+    width: 100%;
+    height: 100%;
+    bottom: 5px;
+    font-weight: bolder;
+}
+
+.float{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:10px;
+    right:10px;
+    background-color:var(--header);
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+    margin-top:15px;
+    color: #B39700;
+}
+
+

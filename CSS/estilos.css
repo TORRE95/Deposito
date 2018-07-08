@@ -1,0 +1,92 @@
+:root{
+
+	--header: #7C0A02;
+	--titulo: white;
+	--texto: white;
+}
+
+*{
+	font-family: 'Montserrat', sans-serif;
+	margin: 0px;
+	padding: 0px;
+}
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: white;
+
+}
+img{
+	margin-top: 6px;
+	width: 120px;
+	height: 120px;
+	display: block;
+	margin:auto;
+	margin-top: 10px;
+}
+html{
+	height: 100%;
+}
+body{
+	height: 100%;
+	color: white;
+	 background: linear-gradient(to bottom, #9b0c02, #7C0A02, 	#5d0701);
+}
+h1{
+	text-align: center;
+	margin-top: 10%;
+}
+
+form{
+	margin-left: 30%;
+	position: relative;
+	margin-top: 20%;
+
+}
+input{
+width: 60%;
+border-radius: 4px;
+border:none;
+background-color: transparent;
+border-bottom: 1px solid;
+height: 30px;
+color: white;
+
+}
+form>input{
+	background-color:  #2196F3;
+	color: white;
+	width: 60%;
+	border-bottom: 0px solid !important;
+}
+.footer{
+  
+  text-align: center;
+  margin-top: 80px;
+
+}
+.footer2{
+	text-align: center;
+	margin-top: 10px;
+}
+.codigo{
+	margin-left: 27%;
+	width: 50%;
+	margin-top: 30%;
+}
+.codigo>textarea{
+
+	width: 100%;
+	margin-top: 20px;
+	text-align: center;
+}
+button{
+	background-color: #2196F3;
+	margin-left: 30%;
+	margin-top: 50%;
+	width: 40%;
+	height: 40px;
+	border-radius: 7px;
+	border-style: groove;
+	border-color: #2196F3;
+	color: white
+}

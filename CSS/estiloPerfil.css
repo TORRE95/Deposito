@@ -1,0 +1,148 @@
+:root{
+
+  --header: #7C0A02;
+  --titulo: white;
+  --texto: white;
+  --texto: white;
+}
+
+
+*{
+	font-family: 'Montserrat', sans-serif;
+	margin: 0px;
+	padding: 0px;
+
+}
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: white;
+}
+.back{
+  margin: 10px;
+}
+.header{
+
+  position: relative;
+  width: 100%;
+  height: 15%;
+  background: var(--header);
+  color: white;
+  -webkit-box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.6);
+  box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.6);
+}
+
+.titulo{
+	width: 100%;
+    position: relative;
+    height: 50%;
+    top: 0px;
+    text-align: center;
+}
+.navbar {
+    width: 100%;
+    position: relative;
+    height: 50%;
+}
+.navbar ul {
+    list-style-type: none; /*to remove bullets*/
+    text-align: center;
+    position: relative;
+    top: 10px;
+    margin-left: 10px;
+}
+.navbar li{
+    float: left;
+    padding: 2px;
+    width: 110px;
+}
+
+/* Style inputs, select elements and textareas */
+input[type=text], select, textarea{
+  position: relative;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+input[type=number], select, textarea{
+  position: relative;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Style the label to display next to the inputs */
+label {
+  position: relative;
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  font-size: 14;
+  color: var(--header);
+  font-weight: bold;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: var(--header);
+  color: #B39700;
+  font-size: 16;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+button{
+  background-color: var(--header);
+  color: #B39700;
+  font-weight: bold;
+  font-size: 16;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  width: 100%;
+}
+/* Style the container */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+/* Floating column for labels: 25% width */
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}

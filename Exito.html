@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/estiloPago.css">
+    <link rel="stylesheet" type="text/css" href="CSS/FontAwesome/fontawesome-all.css">
+    <link rel="stylesheet" href="CSS/Fonts/stylesheet.css">
+    <script type="text/javascript" src="js/funciones.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src *; font-src *; connect-src *">
+</head>
+
+<body onload="exito();">
+    <script>
+    window.location.hash = "no-back-button";
+    window.location.hash = "Again-No-back-button"; //again because google chrome don't insert first hash into history
+    window.onhashchange = function() { window.location.hash = "no-back-button"; }
+    </script>
+        <div class="contenedor">
+            <div class="header">
+                <div class="titulo">
+                    <h2>Pago</h1>
+                </div>
+            </div>
+            <div class="exito">
+                <label>Tu pedido ha sido procesado con exito</label>
+                <br><br><br><br>
+                <label>Numero de Orden</label>
+                <section>1</section>
+            </div>
+            <a href="#" onclick="menu('17')">
+                <div class="continuar">
+                    Continuar Comprando
+                </div>
+            </a>
+        </div>
+    </body>
+</html>

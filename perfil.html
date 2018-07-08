@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="CSS/estiloPerfil.css">
+    <script type="text/javascript" src="js/funciones.js"></script>
+    <link rel="stylesheet" href="CSS/FontAwesome/fontawesome-all.css">
+    <link rel="stylesheet" href="CSS/Fonts/stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src *; font-src *; connect-src *">
+</head>
+
+<body onload="getCorreo();">
+    <script>
+        window.location.hash = "no-back-button";
+        window.location.hash = "Again-No-back-button"; //again because google chrome don't insert first hash into history
+        window.onhashchange = function() { window.location.hash = "no-back-button"; }
+    </script>
+    <div class="contenedor">
+        <div class="header">
+            <div class="titulo">
+                <h2>Perfil</h1>
+            </div>
+            <div class="navbar">
+                <ul>
+                    <a href="inicio.html"><li><i class="fas fa-utensils fa-2x"></i></li></a>
+                    <a href="pedidos.html"><li><i class="far fa-list-alt fa-2x"></i></li></a>
+                    <a href="#"><li><i class="far fa-user fa-2x"></i></li></a>
+                </ul>
+            </div>
+        </div>
+        <div class="contenido" style="padding: 10px;">
+            
+            <form method="GET" action="#">
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="fname">Nombre Usuario</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="lname">Correo Electrónico</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="mail" name="mail" placeholder="Email" required disabled>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="subject">Teléfono</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="number" id="tel" name="tel" placeholder="Teléfono" required>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 30px;">
+                        <input type="submit" value="Actualizar Datos" onclick="updatePerfil();">
+                    </div>
+                    <div class="row" style="margin-top: 30px;">
+                        <button type=button onclick="location.href = 'index.html'">Cerrar Sesión</button>
+                    </div>
+                </form>
+        </div>
+    </div>
+</body>
+</html>

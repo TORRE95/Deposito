@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Cervecería - Bienvenido</title>
+		<script type="text/javascript" src="js/funciones.js"></script>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="CSS/estilosLogin.css">
+		<link rel="stylesheet" type="text/css" href="CSS/Fonts/stylesheet.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval' ; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline';">
+		
+	</head>
+	<body>
+		
+		<div class="contenedor">
+			<br><br>
+			<form >
+				<img src="img/logo.png" alt="">
+				<br>
+				<label>
+					Correo Electrónico:<br>
+					<input type="email" name="mail" required id="mail">
+				</label><br><br>
+				<label>
+					Contraseña:<br>
+					<input type="password" name="pass" required id="pass">
+				</label><br><br>
+				<input type="button" name="iniciar" value="Iniciar Sesión" onclick="inicioSesion();" >
+				<div class="footer">
+					<a href="registro.html">¿No tienes cuenta? ¡Regístrate ahora!</a>
+				</div>
+			</form>
+			<br>
+			
+			
+		</div>
+		
+	</body>
+</html>
+<script type="text/javascript">window.addEventListener('load', inicioSesion, true);</script>

@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pago</title>
+    <link rel="stylesheet" href="CSS/estiloPago.css">
+    <link rel="stylesheet" href="CSS/FontAwesome/fontawesome-all.css">
+    <link rel="stylesheet" href="CSS/Fonts/stylesheet.css">
+    <script type="text/javascript" src="js/funciones.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src *; font-src *; connect-src *">
+</head>
+
+<body>
+    <script>
+    window.location.hash = "no-back-button";
+    window.location.hash = "Again-No-back-button"; //again because google chrome don't insert first hash into history
+    window.onhashchange = function() { window.location.hash = "no-back-button"; }
+    </script>
+    <div class="contenedor">
+        <div class="header">
+            <div class="titulo">
+                <i class="fas fa-arrow-left fa-2x" onclick="goBack()"></i>
+                <h2>Pago</h1>
+				</div>
+			</div>
+			<div class="pago">
+				<form>
+					<label>
+						Nombre del titular<br> de la tarjeta<br>
+						<input type="text" name="nombre" required>
+					</label><br><br>
+					<label>
+						Número de tarjeta<br>
+						<input type="number" name="numeroTarjeta" minlength="16" maxlength="16" required>
+					</label><br><br>
+					Fecha de vencimiento<br>
+					<select name="mes" class="fecha">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+					</select>
+					<select name="year" class="fecha">
+						<option value="2018">2018</option>
+						<option value="2019">2019</option>
+						<option value="2020">2020</option>
+						<option value="2021">2021</option>
+						<option value="2022">2022</option>
+						<option value="2023">2023</option>
+						<option value="2024">2024</option>
+						<option value="2025">2025</option>
+						<option value="2026">2026</option>
+						<option value="2027">2027</option>
+						<option value="2028">2028</option>
+						<option value="2029">2029</option>
+					</select><br><br>
+					<label>
+						CCV<br>
+						<input type="number" name="cv" required  minlength="3" maxlength="3"><br>
+					</label><br><br>
+					<input type="button" name="agregar" value="Pagar" onclick="insertarOrden();" style="color: white;
+    font-weight: bolder; font-size: 16;">
+				</form>
+			</div>
+		</div>
+		<script>
+			function goBack() {
+    			window.history.back();
+			}
+		</script>
+	</body>
+	
+</html>

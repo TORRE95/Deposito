@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Copyclex - Registro</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="js/funciones.js"></script>
+	<link rel="stylesheet" type="text/css" href="CSS/estilosLogin.css">
+	<link rel="stylesheet" type="text/css" href="CSS/Fonts/stylesheet.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval' ; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline';">
+</head>
+<body>
+	<h1>Registro</h1>
+	<form >
+		<label>
+			Nombre:<br>
+			<input type="text" name="nombre" id="nombre" required>
+		</label><br><br>
+		<label>
+			Correo:<br>
+			<input type="email" name="mail" id="mail" required>
+		</label><br><br>
+		<label>
+			Contraseña:<br> 
+			<input type="password" name="pass1" id="pass1" required>
+		</label><br><br>
+		<label>
+			Confirmar contraseña:
+			<input type="password" name="pass2" id="pass2" required>
+		</label><br><br>
+		<input type="button" name="registro" value="Registrar" onclick="registrar();">
+	</form><br><br>
+	<div class="footer">
+	<a href="index.html">¿Ya tienes cuenta? ¡Inicia sesión para continuar!</a>
+	</div>
+
+	<div class="footer2">
+	<a href="registroServer.html">Registrate como Servidor.</a>
+	</div>
+	
+	
+	<script type="text/javascript">window.addEventListener('load', registrar, true);</script>
+</body>
+</html>
