@@ -1,24 +1,23 @@
 <html>
-
-<head>
-    <meta ccharset="UTF-8">
-    <title>Carrito</title>
-    <script type="text/javascript" src="js/funciones.js"></script>
-    <link rel="stylesheet" href="CSS/estiloCarrito.css">
-    <link rel="stylesheet" href="CSS/FontAwesome/fontawesome-all.css">
-    <link rel="stylesheet" href="CSS/Fonts/stylesheet.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src *; font-src *; connect-src *">
-</head>
-
-<body onload="cargarCarrito();">
-    <script>
-    window.location.hash = "no-back-button";
-    window.location.hash = "Again-No-back-button"; //again because google chrome don't insert first hash into history
-    window.onhashchange = function() { window.location.hash = "no-back-button"; }
-    </script>
-    <div class="notch">
+    <head>
+        <meta ccharset="UTF-8">
+        <title>Carrito</title>
+        <script type="text/javascript" src="js/funciones.js"></script>
+        <link rel="stylesheet" href="CSS/estiloCarrito.css">
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+        <link rel="stylesheet" href="CSS/FontAwesome/fontawesome-all.css">
+        <link rel="stylesheet" href="CSS/Fonts/stylesheet.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src *; font-src *; connect-src *">
+    </head>
+    <body onload="cargarCarrito();">
+        <script>
+        window.location.hash = "no-back-button";
+        window.location.hash = "Again-No-back-button"; //again because google chrome don't insert first hash into history
+        window.onhashchange = function() { window.location.hash = "no-back-button"; }
+        </script>
+        <div class="notch">
             <div class="titulo">
                 <h2>Carrito</h1>
             </div>
@@ -26,25 +25,26 @@
         <div class="contenido">
             
             
-            <section class="contenido">
+            <section id="carro" class="contenido">
                 
             </section>
             <article>
                 
             </article>
-            <br><br><br><br>
+            <br><br><br><br><br>
             <div class="header">
                 <div class="navbar">
                     <ul>
-                        <a href="#" onclick="menu('17');"><li><i class="fas fa-utensils fa-2x"></i></li></a>
+                        <a href="menu.html"><li><i class="fas fa-beer fa-2x"></i></li></a>
                         <a href="pedidos.html"><li><i class="far fa-list-alt fa-2x"></i></li></a>
-                        <a href="carrito.html"><li><i class="fas fa-cart-arrow-down fa-2x"></i></li></a>
+                        <a href="#"><li><i class="fas fa-cart-arrow-down fa-2x"></i></li></a>
+                        <a href="perfil.html"><li><i class="far fa-user fa-2x"></i></li></a>
+                        <a href="ofertas.html"><li><i class="fas fa-percentage fa-2x"></li></i></a>
                     </ul>
                 </div>
             </div>
         </div>
-</body>
-<script>
-</script>
-
+    </body>
+    <script>
+    </script>
 </html>

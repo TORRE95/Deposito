@@ -1,5 +1,31 @@
 
 var url = "https://deposito1.000webhostapp.com/";
+
+function menu(idCafe){
+
+	localStorage.setItem('idCafeteria', idCafe);
+	window.location.href='menu.html';
+
+
+
+}
+
+function cantidad(idProducto, Precio, Nombre){
+	var info = '<div id="modal2">'+
+            '<div id="modal1">'+
+                '<div class="ingr">'+
+                    '<h3 style="margin: 5px; text-align: center;">Elegir cantidad</h3><br>'+
+                    '<input id="cantidad" type="number" onkeypress="return isNumber(event)" />';
+
+        info += '</div>'+
+                '<div class="aceptar">'+
+                    '<button id="aceptar" onclick="add('+idProducto+','+Precio+','+"'"+Nombre+"'"+')">Agregar</button>'+
+                    '<button id="cancelar" onclick="cancela();">Cancelar</button>'+
+                '</div>'+
+            '</div>'+
+        '</div>';
+        document.getElementById('modal').innerHTML = info;
+}
 function registrar() {
 	
 	
@@ -132,7 +158,11 @@ function updatePerfil() {
 		}
 	}
 }
-
+function cancela(){
+	document.getElementById('modal').style.visibility = 'hidden';
+	document.getElementById('modal2').style.visibility = 'hidden';
+	document.getElementById('modal1').style.visibility = 'hidden';
+}
 function pedidos() {
 	var id = localStorage.getItem('idUsuario');
 	if (id != "") {
@@ -162,19 +192,6 @@ function pedidos() {
 		}
 	}
 }
-
-
-
-
-function menu(idCafe){
-
-	localStorage.setItem('idCafeteria', idCafe);
-	window.location.href='menu.html';
-
-
-
-}
-
 
 function registrar() {
 	
@@ -218,7 +235,6 @@ function inicioSesion() {
 		inicioAjax = new XMLHttpRequest();
 		inicioAjax.open('GET', url+'selectUsuarios.php?mail='+mail+'&pass='+pass);
 		inicioAjax.send();
-		alert("Iniciando Sesion");
 		
 		inicioAjax.onreadystatechange = function(){
 			if (inicioAjax.readyState == 4 && inicioAjax.status == 200) {
@@ -228,7 +244,7 @@ function inicioSesion() {
 						localStorage.setItem('tipoUsuario', inicio[0].tipoUsuario);
 
 				if (inicio[0].tipoUsuario=="0") {
-							menu("17");
+							modal();
 						}
 
 					if (inicio[0].tipoUsuario == "1") {
@@ -240,6 +256,24 @@ function inicioSesion() {
 	}
 } 
 
+function modal(){
+	var info = '<div id="modal2">'+
+            '<div id="modal1">'+
+                '<div class="ingr">'+
+                    '<h3 style="margin: 5px;">¿Eres mayor de edad?</h3><br><p> Al aceptar que eres mayor de edad'+
+                    ' manifiesta su conformidad con las politica de confidencialidad. Cualquier'+
+                    ' uso indebido de esta aplicación es responsabilidad de quien la usa y el'+
+                    ' titular de la tarjeta de crédito</p>';
+
+        info += '</div>'+
+                '<div class="aceptar">'+
+                    '<button id="aceptar" onclick="menu(17)">Soy mayor de edad</button>'+
+                    '<button id="cancelar" onclick="cancela();">Salir</button>'+
+                '</div>'+
+            '</div>'+
+        '</div>'
+        document.getElementById('modal').innerHTML = info;
+}
 
 function orden() {
 	var id = localStorage.getItem('idUsuario');
@@ -438,7 +472,38 @@ function cargarMenu(){
 							"<div style='font-size: 14px; text-align: center; margin-left: 10px;'>"+menu[i].Descripcion+"</div>"+
 						"</div>"+
 						"<div class='precio'>"+
-							"<div class='agregar'><button onclick='add("+menu[i].idProducto+","+menu[i].Precio+","+'"'+menu[i].Nombre+'"'+");'"+">Agregar</button></div>"+
+							"<div class='agregar'><button onclick='cantidad("+menu[i].idProducto+","+menu[i].Precio+","+'"'+menu[i].Nombre+'"'+");'"+">Agregar</button></div>"+
+						"</div>"+
+					"</div>";
+				document.querySelector('section').innerHTML += info;
+			}
+			
+		}
+	}
+}
+function cargarOfertas(){
+	menuAjax = new XMLHttpRequest();
+	menuAjax.open('GET', url+"selectMenu.php?id="+18);
+	menuAjax.send();
+	
+
+	menuAjax.onreadystatechange = function(){
+		if (menuAjax.readyState == 4 && menuAjax.status == 200) {
+			menu = JSON.parse(menuAjax.responseText);
+			for (var i = 0; i < menu.length; i++) {
+					var info = 
+					"<div class='item'>"+
+						"<div class='fotoItem'>"+
+							"<img src='"+menu[i].foto+"'>"+
+						"</div>"+
+						"<div class='desc'>"+
+							"<div class='dinero'><h4><strike>$"+menu[i].Precio+"</strike></h4></div>"+
+							"<div class='dinero'><h3>$"+(menu[i].Precio*0.85)+"</h3></div>"+
+							"<h3>"+menu[i].Nombre+"</h3>"+
+							"<div style='font-size: 14px; text-align: center; margin-left: 10px;'>"+menu[i].Descripcion+"</div>"+
+						"</div>"+
+						"<div class='precio'>"+
+							"<div class='agregar'><button onclick='cantidad("+menu[i].idProducto+","+menu[i].Precio+","+'"'+menu[i].Nombre+'"'+");'"+">Agregar</button></div>"+
 						"</div>"+
 					"</div>";
 				document.querySelector('section').innerHTML += info;
@@ -448,21 +513,36 @@ function cargarMenu(){
 	}
 }
 
+
+function isNumber(event){
+	var keycode = event.keyCode;
+	if (keycode>47 && keycode<57) {
+		return true;
+	}
+	else{
+		return false;
+	}
+}
 function add(idProducto, precio, nombre){
+	var cantidad = document.getElementById('cantidad').value;
 	var idUsuario = localStorage.getItem("idUsuario");
-	console.log(url)
-	precioAjax = new XMLHttpRequest();
-	precioAjax.open('GET', url+"insertCarrito.php?idProducto="+idProducto+"&precio="+precio+"&idUsuario="+idUsuario+"&nombreProducto="+nombre);
-	precioAjax.send();
-	precioAjax.onreadystatechange = function(){
-		if (precioAjax.readyState == 4 && precioAjax.status == 200) {
-			if (precioAjax.responseText=="1") {
-				alert("Producto agregado al carrito");
-			}else{
-				alert("Error inesperado, intente más tarde");
-			}
+	console.log(url);
+
+		precioAjax = new XMLHttpRequest();
+		precioAjax.open('GET', url+"insertCarrito.php?idProducto="+idProducto+"&precio="+precio+"&idUsuario="+idUsuario+"&nombreProducto="+nombre+"&cantidad="+cantidad);
+		precioAjax.send();
+		precioAjax.onreadystatechange = function(){
+			if (precioAjax.readyState == 4 && precioAjax.status == 200) {
+				if (precioAjax.responseText=="1") {
+					alert("Producto agregado al carrito");
+					cancela();
+				}else{
+					alert("Error inesperado, intente más tarde");
+				}
 		}
 	}
+	
+	
 }
 
 function cargarCarrito(){
@@ -475,6 +555,8 @@ function cargarCarrito(){
 	carritoAjax.onreadystatechange = function(){
 		if (carritoAjax.readyState == 4 && carritoAjax.status == 200) {
 			carrito = JSON.parse(carritoAjax.responseText);
+			document.querySelector('section').innerHTML = "";
+				document.querySelector('article').innerHTML = "";
 			for (var i = 0; i < carrito.length; i++) {
 				descripcion +=carrito[i].nombre + ","
 				suma += parseInt(carrito[i].precio);
@@ -490,6 +572,7 @@ function cargarCarrito(){
 								"</div>"+
 								"<input type='hidden' value='"+carrito[i].idCarrito+"/"+i+"'>"+
 							"</div>"+
+							"<div class='borrar' onclick=borrar("+carrito[i].idCarrito+")><i class='fas fa-times-circle'></i></div>"+
 						"</div>"+
 					"</div>";
 				document.querySelector('section').innerHTML += info;
@@ -569,6 +652,17 @@ function exito(){
 						document.querySelector('section').innerHTML = info;
 				}	
 			}
+		}
+	}
+}
+
+function borrar(idCarrito){
+	carritoAjax = new XMLHttpRequest();
+	carritoAjax.open('GET', url+"borrarCarrito.php?id="+idCarrito);
+	carritoAjax.send();
+	carritoAjax.onreadystatechange = function(){
+		if (carritoAjax.readyState == 4 && carritoAjax.status == 200) {
+			cargarCarrito();
 		}
 	}
 }
