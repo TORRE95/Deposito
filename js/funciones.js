@@ -456,11 +456,14 @@ function cargarMenu(){
 	menuAjax.open('GET', url+"selectMenu.php?id="+idCafe);
 	menuAjax.send();
 	
+	var des = "";
 
 	menuAjax.onreadystatechange = function(){
 		if (menuAjax.readyState == 4 && menuAjax.status == 200) {
 			menu = JSON.parse(menuAjax.responseText);
+
 			for (var i = 0; i < menu.length; i++) {
+				des = menu[i].Descripcion.split(",");
 					var info = 
 					"<div class='item'>"+
 						"<div class='fotoItem'>"+
@@ -469,7 +472,7 @@ function cargarMenu(){
 						"<div class='desc'>"+
 							"<div class='dinero'><h3>$"+menu[i].Precio+"</h3></div>"+
 							"<h3>"+menu[i].Nombre+"</h3>"+
-							"<div style='font-size: 14px; text-align: center; margin-left: 10px;'>"+menu[i].Descripcion+"</div>"+
+							"<div style='font-size: 14px; text-align: center; margin-left: 10px;'>"+des[0]+"<br>"+des[1]+"</div>"+
 						"</div>"+
 						"<div class='precio'>"+
 							"<div class='agregar'><button onclick='cantidad("+menu[i].idProducto+","+menu[i].Precio+","+'"'+menu[i].Nombre+'"'+");'"+">Agregar</button></div>"+
